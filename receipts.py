@@ -57,18 +57,23 @@ def parse_month(s):
         raise argparse.ArgumentTypeError(f"เดือนต้องเป็นรูปแบบ YYYY-MM: {s}")
 
 
-def store_file(path):
-    """คัดลอกไฟล์ใบเสร็จเข้าโฟลเดอร์ข้อมูล คืนชื่อไฟล์ที่เก็บ"""
-    if not os.path.isfile(path):
-        sys.exit(f"ไม่พบไฟล์: {path}")
+def unique_name(base):
+    """คืนชื่อไฟล์ที่ยังไม่ซ้ำในโฟลเดอร์ข้อมูล"""
     os.makedirs(FILES_DIR, exist_ok=True)
-    base = os.path.basename(path)
     stem, ext = os.path.splitext(base)
     name = base
     n = 1
     while os.path.exists(os.path.join(FILES_DIR, name)):
         name = f"{stem}_{n}{ext}"
         n += 1
+    return name
+
+
+def store_file(path):
+    """คัดลอกไฟล์ใบเสร็จเข้าโฟลเดอร์ข้อมูล คืนชื่อไฟล์ที่เก็บ"""
+    if not os.path.isfile(path):
+        sys.exit(f"ไม่พบไฟล์: {path}")
+    name = unique_name(os.path.basename(path))
     shutil.copy2(path, os.path.join(FILES_DIR, name))
     return name
 
