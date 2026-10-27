@@ -1,0 +1,12 @@
+{
+  "_note": "ตารางอ้างอิงที่ admin ดูแล — ค่าด้านล่างเป็นตัวอย่างโครงสร้างเท่านั้น (example=true) ต้องแทนที่ด้วยค่าจาก IFU ฉบับล่าสุดของแต่ละรุ่นก่อนใช้งานจริง rule ที่ไม่มีข้อมูลอ้างอิงจะถูกข้ามและแสดงเป็น 'ประเมินไม่ได้' ไม่ใช่ผ่าน",
+  "updated": "2026-10-25",
+  "updated_by": "",
+  "overexpansion_limits_mm": [
+    {"match": "EXAMPLE-STENT", "max_post_dilation_mm": 4.5, "example": true}
+  ],
+  "hbr_devices": ["biofreedom", "onyx one"],
+  "gtin_to_device": [
+    {"gtin": "00000000000000", "name": "EXAMPLE DEVICE", "size": "3.0x24", "example": true}
+  ]
+}

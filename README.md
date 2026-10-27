@@ -31,3 +31,7 @@ python webapp.py --port 9000
 
 **ข้อควรระวัง:** ยังไม่มีระบบล็อกอิน จึงผูกกับ `127.0.0.1` เป็นค่าเริ่มต้น
 อย่าใช้ `--host 0.0.0.0` บนเครือข่ายสาธารณะโดยไม่มีการยืนยันตัวตนด้านหน้า
+
+## PCI Audit & QC (AI Assisted Clinical Review)
+
+เว็บแอปตรวจคุณภาพเอกสารรายงาน PCI ด้วย Claude (Cloud API) + rule engine — ดู [`pci_audit/README.md`](pci_audit/README.md)

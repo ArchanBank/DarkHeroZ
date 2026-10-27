@@ -1,0 +1,40 @@
+{
+  "version": "2026.10.1",
+  "effective_date": "2026-10-25",
+  "owner": "คณะกรรมการ cath lab / HA (ต้องอนุมัติทุกการเปลี่ยนแปลง threshold และเพิ่ม version)",
+  "status": "DRAFT — เกณฑ์ audit ภายในที่ยังไม่ผ่านการ validate",
+  "thresholds": {
+    "onset_max_days": 28,
+    "ffr_nonsignificant_above": 0.80,
+    "ifr_rfr_nonsignificant_above": 0.89,
+    "echo_max_months": 6,
+    "d2b_target_min": 90,
+    "long_procedure_min": 60,
+    "air_kerma_followup_gy": 5.0,
+    "cto_min_months": 3,
+    "tvd_min_stenosis_pct": 70,
+    "tvd_min_vessel_mm": 2.0,
+    "mvd_min_stenosis_pct": 70,
+    "lm_significant_pct": 50,
+    "lm_intermediate_max_pct": 70,
+    "copy_paste_similarity": 0.85,
+    "copy_paste_min_chars": 40,
+    "dcb_max_residual_pct": 30,
+    "hbr_max_dapt_months": 3,
+    "ccs_default_dapt_months": 6,
+    "low_confidence": 0.80,
+    "span_missing_confidence_factor": 0.5
+  },
+  "policy": {
+    "green_deducts": true,
+    "red_blocks_auto_unlock": true,
+    "red_cap": 6.0,
+    "levels": [
+      {"min": 8.5, "level": "Well documented", "action": "unlock", "label_th": "ปลดล็อกให้ส่งเบิก"},
+      {"min": 7.0, "level": "Generally well documented", "action": "addendum", "label_th": "แจ้ง addendum ที่ต้องเพิ่ม"},
+      {"min": 5.0, "level": "Needs revision", "action": "lock", "label_th": "ล็อกการส่งเบิกจนกว่าจะแก้ rule ระดับแดงครบ"},
+      {"min": 0.0, "level": "High audit risk", "action": "peer_review", "label_th": "ส่ง peer review queue"}
+    ]
+  },
+  "disabled_rules": []
+}

@@ -1,0 +1,34 @@
+{
+  "_note": "เคสตัวอย่างสังเคราะห์ (ไม่ใช่ข้อมูลผู้ป่วยจริง) ตั้งใจให้มีข้อผิดพลาดเพื่อสาธิต rule",
+  "fields": {
+    "patient.age": 78, "patient.sex": "ชาย", "patient.egfr": 52, "patient.hb": 12.4,
+    "clinical.syndrome": "NSTEMI", "clinical.header_syndrome": "NSTEMI", "clinical.dapt_text_syndrome": "CCS",
+    "clinical.onset_date": "2026-08-20", "clinical.procedure_date": "2026-10-05",
+    "clinical.dm": true, "clinical.af_oac": true,
+    "anatomy.diagnosis_label": "TVD",
+    "echo.date": "2026-03-01", "echo.lvef": 45,
+    "decision.adhoc_or_staged": "ad hoc",
+    "qc.start_time": "09:00", "qc.end_time": "10:20", "qc.contrast_ml": 180, "qc.lhc_performed": true,
+    "qc.vasoactive": ["norepinephrine"],
+    "plan.dapt_duration_months": 12,
+    "summary.stent_count": 3, "summary.header_procedures": ["LHC"],
+    "summary.conclusion_text": "PCI to LAD and LM done.",
+    "summary.procedure_success": true,
+    "summary.syntax_components": ["LAD prox:bifurcation", "LAD prox:bifurcation"]
+  },
+  "lesions": [
+    {"id": "L1", "fields": {"name": "LM", "vessel": "LM", "stenosis_pct": 60, "vessel_size_mm": 4.0, "treated": true,
+       "stent_brand": "Brand-X DES", "imaging_used": "IVUS", "medina": "1,1,0", "atherectomy_type": "Rota",
+       "narrative_text": "Lesion at ostial segment treated with 3.5x18 DES after predilation with 3.0 balloon at 14 atm, good result TIMI 3."}},
+    {"id": "L2", "fields": {"name": "proximal LAD", "vessel": "LAD", "stenosis_pct": 90, "vessel_size_mm": 3.0, "treated": true,
+       "stent_brand": "Brand-X DES",
+       "narrative_text": "Lesion at ostial segment treated with 3.5x18 DES after predilation with 3.0 balloon at 14 atm, good result TIMI 3."}},
+    {"id": "L3", "fields": {"name": "mid RCA", "vessel": "RCA", "stenosis_pct": 80, "vessel_size_mm": 3.5, "treated": false}}
+  ],
+  "devices": [
+    {"slot": "L1-prep", "source": "narrative", "category": "atherectomy", "name": "Rotablator", "size": "1.5 mm"},
+    {"slot": "L1-prep", "source": "sticker", "category": "atherectomy", "name": "Diamondback OAS", "size": "1.25 mm"},
+    {"slot": "S1", "source": "log", "category": "stent", "name": "Brand-X DES", "size": "3.5x18"},
+    {"slot": "S2", "source": "log", "category": "stent", "name": "Brand-X DES", "size": "3.0x24"}
+  ]
+}
